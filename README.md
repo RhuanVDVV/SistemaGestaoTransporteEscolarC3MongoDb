@@ -18,20 +18,6 @@ Para executar o sistema basta executar o script Python a seguir:
 - [src](src): Nesse diretório estão os scripts do sistema
     * [conexion](src/conexion): Nesse repositório encontra-se o [módulo de conexão com o banco de dados Mongo](src/conexion/mongo_queries.py). Esse módulo possue algumas funcionalidades úteis para execução de instruções. O módulo do Mongo realiza a conexão, os métodos CRUD e de recuperação de dados são implementados diretamente nos objetos controladores (_Controllers_) e no objeto de Relatório (_reports_).
       
-      - Caso esteja utilizando na máquina virtual antiga, você precisará alterar o método connect de:
-          ```python
-          self.conn = cx_Oracle.connect(user=self.user,
-                                  password=self.passwd,
-                                  dsn=self.connectionString()
-                                  )
-          ```
-        Para:
-          ```python
-          self.conn = cx_Oracle.connect(user=self.user,
-                                  password=self.passwd,
-                                  dsn=self.connectionString(in_container=True)
-                                  )
-          ```
       - Exemplo de utilização para conexão no Mongo;
       ```python
             # Importa o módulo MongoQueries
